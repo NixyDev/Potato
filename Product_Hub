@@ -14,7 +14,7 @@ if not _G.PotatoLoaded == true then
 	TabCreateEvent.Parent = game;
 	
 	local NameChangeEvent = Instance.new "BindableEvent";
-	TabCreateEvent.Name = "ZLT";
+	TabCreateEvent.Name = "ZTL";
 	TabCreateEvent.Parent = game;
 	
 	local PotatoCore = Instance.new "ScreenGui";
