@@ -1,0 +1,397 @@
+local CoreGui = game:GetService "CoreGui" ;
+
+local UserInput = game:GetService "UserInputService";
+
+local RunService = game:GetService "RunService";
+
+local  StarterGui = game:GetService "StarterGui";
+
+if not _G.PotatoLoaded == true then
+	_G.PotatoLoaded = true;
+	
+	local TabCreateEvent = Instance.new "BindableEvent";
+	TabCreateEvent.Name = "ZTE";
+	TabCreateEvent.Parent = game;
+	
+	local NameChangeEvent = Instance.new "BindableEvent";
+	TabCreateEvent.Name = "ZLT";
+	TabCreateEvent.Parent = game;
+	
+	local PotatoCore = Instance.new "ScreenGui";
+	PotatoCore.Name = math.random(0,500).."¿Er?!>oC"..math.random(1000,5000);
+	PotatoCore.Parent = CoreGui;
+	PotatoCore.DisplayOrder = 999999999;
+	PotatoCore.ResetOnSpawn = false;
+	PotatoCore.IgnoreGuiInset = true;
+	PotatoCore.Enabled = false;
+
+	CoreFrame = Instance.new "Frame";
+	CoreFrame.Name = math.random(0,500).."Tes!seA_>="..math.random(1000,5000);
+	CoreFrame.Parent = PotatoCore;
+	CoreFrame.Position = UDim2.new(0.338, 0,0.306, 0);
+	CoreFrame.Size = UDim2.new(0, 442,0, 265);
+	CoreFrame.BackgroundColor3 = Color3.fromRGB(8,8,8);
+	Instance.new("UICorner", CoreFrame).CornerRadius = UDim.new(0, 5);
+
+	local CoreLabel_Name = Instance.new "TextLabel";
+	CoreLabel_Name.Name = math.random(0,500).."Tes!♠seA"..math.random(1000,5000);
+	CoreLabel_Name.Parent = CoreFrame;
+	CoreLabel_Name.Position = UDim2.new(0.373, 0,0.057, 0);
+	CoreLabel_Name.Size = UDim2.new(0, 111,0, 31);
+	CoreLabel_Name.BackgroundTransparency = 1;
+	CoreLabel_Name.Font = "GothamSemibold";
+	CoreLabel_Name.TextColor3 = Color3.fromRGB(211, 211, 211);
+	CoreLabel_Name.Text = "Potato";
+	CoreLabel_Name.TextSize = 15;
+	
+	local CoreLabel_CurrentGame = Instance.new "TextLabel";
+	CoreLabel_CurrentGame.Name = math.random(0,500).."Tes!♠seA"..math.random(1000,5000);
+	CoreLabel_CurrentGame.Parent = CoreFrame;
+	CoreLabel_CurrentGame.Position = UDim2.new(0.428, 0,0.215, 0);
+	CoreLabel_CurrentGame.Size = UDim2.new(0, 63,0, 21);
+	CoreLabel_CurrentGame.BackgroundTransparency = 1;
+	CoreLabel_CurrentGame.Font = "GothamBold";
+	CoreLabel_CurrentGame.TextColor3 = Color3.fromRGB(211, 211, 211);
+	CoreLabel_CurrentGame.Text = "Universal";
+	CoreLabel_CurrentGame.TextSize = 14;
+	
+	local CoreButton_Close = Instance.new "TextButton";
+	CoreButton_Close.Name = math.random(0,500).."Tes!☺seA"..math.random(1000,5000);
+	CoreButton_Close.Parent = CoreFrame;
+	CoreButton_Close.Position = UDim2.new(0.937, 0,0.057, 0);
+	CoreButton_Close.Size = UDim2.new(0, 15,0, 15);
+	CoreButton_Close.BackgroundColor3 = Color3.fromRGB(255, 0, 4);
+	CoreButton_Close.Text = " ";
+
+	local CoreButton_SideMenu = Instance.new "ImageButton";
+	CoreButton_SideMenu.Name = math.random(0,500).."Tes!seA"..math.random(1000,5000);
+	CoreButton_SideMenu.Parent = CoreFrame;
+	CoreButton_SideMenu.Position = UDim2.new(0.025, 0,0.043, 0);
+	CoreButton_SideMenu.Size = UDim2.new(0, 21,0, 21);
+	CoreButton_SideMenu.BackgroundTransparency = 1;
+	CoreButton_SideMenu.Image = "rbxassetid://3926305904";
+	CoreButton_SideMenu.ImageColor3 = Color3.fromRGB(255, 255, 255);
+	CoreButton_SideMenu.ImageRectOffset = Vector2.new(604, 684);
+	CoreButton_SideMenu.ImageRectSize = Vector2.new(36, 36);
+
+	local ScrollPart_Home = Instance.new "ScrollingFrame";
+	ScrollPart_Home.Name = math.random(0,500).."Tes!seA"..math.random(1000,5000);
+	ScrollPart_Home.Parent = CoreFrame;
+	ScrollPart_Home.BackgroundTransparency = 1;
+	ScrollPart_Home.Position = UDim2.new(0.014, 0,0.321, 0);
+	ScrollPart_Home.Size = UDim2.new(0, 429,0, 170);
+	ScrollPart_Home.ScrollBarThickness = 0;
+	ScrollPart_Home.CanvasSize = UDim2.new(0, 0, 9, 0);
+	local ListLayout = Instance.new "UIListLayout";
+	ListLayout.Parent = ScrollPart_Home;
+	ListLayout.Padding = UDim.new(0, 8);
+	ListLayout.HorizontalAlignment = "Center";
+	ListLayout.SortOrder = "Name";
+	
+	
+	-- Tab Create
+	TabCreateEvent.Event:Connect(function(TabName, TabDesc, RawLink)
+		local Tab_Frame = Instance.new "Frame";
+		Tab_Frame.Name = TabName;
+		Tab_Frame.Parent = ScrollPart_Home;
+		Tab_Frame.Size = UDim2.new(0, 397,0, 55);
+		Tab_Frame.BackgroundColor3 = Color3.fromRGB(8,8,8);
+		Instance.new("UICorner", Tab_Frame).CornerRadius = UDim.new(0, 3);
+		
+		local Tab_Name = Instance.new "TextLabel";
+		Tab_Name.Name = TabName;
+		Tab_Name.Parent = Tab_Frame;
+		Tab_Name.Position = UDim2.new(0.024, 0,0.182, 0);
+		Tab_Name.Size = UDim2.new(0, 74,0, 25);
+		Tab_Name.BackgroundTransparency = 1;
+		Tab_Name.Font = "Gotham";
+		Tab_Name.TextColor3 = Color3.fromRGB(255, 255, 255);
+		Tab_Name.Text = TabName;
+		Tab_Name.TextSize = 14;
+		Tab_Name.TextXAlignment = "Left";
+		
+		local Tab_Desc = Instance.new "TextLabel";
+		Tab_Desc.Name = TabDesc;
+		Tab_Desc.Parent = Tab_Frame;
+		Tab_Desc.Position = UDim2.new(0.024, 0,0.527, 0);
+		Tab_Desc.Size = UDim2.new(0, 212,0, 15);
+		Tab_Desc.BackgroundTransparency = 1;
+		Tab_Desc.Font = "GothamBold";
+		Tab_Desc.TextColor3 = Color3.fromRGB(255, 255, 255);
+		Tab_Desc.Text = TabDesc;
+		Tab_Desc.TextSize = 10;
+		Tab_Desc.TextXAlignment = "Left";
+		
+		local Tab_Execute = Instance.new "TextButton";
+		Tab_Execute.Name = math.random(0,500).."Tes!seA"..math.random(1000,5000);
+		Tab_Execute.Parent = Tab_Frame;
+	    Tab_Execute.Position = UDim2.new(0.829, 0,0.291, 0);
+	    Tab_Execute.Size = UDim2.new(0, 47,0, 22);
+		Tab_Execute.BackgroundTransparency = 1;
+		Tab_Execute.Font = "GothamBlack";
+		Tab_Execute.TextColor3 = Color3.fromRGB(255, 255, 255);
+		Tab_Execute.Text = "Execute";
+		Tab_Execute.TextSize = 14;
+		
+		Tab_Execute.MouseButton1Click:Connect(function()
+			pcall(function()
+				loadstring(game:HttpGet(RawLink))()
+			end)
+		end)
+	end)
+	
+	NameChangeEvent.Event:Connect(function(NewName)
+		CoreLabel_CurrentGame.Text = NewName;
+	end)
+	
+	-- Set Up
+	
+	local isOpen = true;
+	CoreFrame.BackgroundTransparency = 1;
+	ScrollPart_Home.Visible = false;
+	CoreLabel_Name.TextTransparency = 1;
+	CoreLabel_CurrentGame.TextTransparency = 1;
+	CoreButton_Close.BackgroundTransparency = 1;
+	CoreButton_SideMenu.ImageTransparency = 1;
+	PotatoCore.Enabled = true;
+	
+	function Open()		
+		CoreFrame.BackgroundTransparency = CoreFrame.BackgroundTransparency - 0.1;
+		CoreLabel_Name.TextTransparency = CoreLabel_Name.TextTransparency - 0.1;
+		CoreLabel_CurrentGame.TextTransparency = CoreLabel_CurrentGame.TextTransparency - 0.1;
+		CoreButton_SideMenu.ImageTransparency = CoreButton_SideMenu.ImageTransparency - 0.1;
+		CoreButton_Close.BackgroundTransparency = CoreButton_Close.BackgroundTransparency - 0.1;
+		
+		wait();
+		
+		CoreFrame.BackgroundTransparency = CoreFrame.BackgroundTransparency - 0.1;
+		CoreLabel_Name.TextTransparency = CoreLabel_Name.TextTransparency - 0.1;
+		CoreLabel_CurrentGame.TextTransparency = CoreLabel_CurrentGame.TextTransparency - 0.1;
+		CoreButton_SideMenu.ImageTransparency = CoreButton_SideMenu.ImageTransparency - 0.1;
+		CoreButton_Close.BackgroundTransparency = CoreButton_Close.BackgroundTransparency - 0.1;
+		
+		wait();
+
+		CoreFrame.BackgroundTransparency = CoreFrame.BackgroundTransparency - 0.1;
+		CoreLabel_Name.TextTransparency = CoreLabel_Name.TextTransparency - 0.1;
+		CoreLabel_CurrentGame.TextTransparency = CoreLabel_CurrentGame.TextTransparency - 0.1;
+		CoreButton_SideMenu.ImageTransparency = CoreButton_SideMenu.ImageTransparency - 0.1;
+		CoreButton_Close.BackgroundTransparency = CoreButton_Close.BackgroundTransparency - 0.1;
+		
+		wait();
+
+		CoreFrame.BackgroundTransparency = CoreFrame.BackgroundTransparency - 0.1;
+		CoreLabel_Name.TextTransparency = CoreLabel_Name.TextTransparency - 0.1;
+		CoreLabel_CurrentGame.TextTransparency = CoreLabel_CurrentGame.TextTransparency - 0.1;
+		CoreButton_SideMenu.ImageTransparency = CoreButton_SideMenu.ImageTransparency - 0.1;
+		CoreButton_Close.BackgroundTransparency = CoreButton_Close.BackgroundTransparency - 0.1;
+		
+		wait();
+
+		CoreFrame.BackgroundTransparency = CoreFrame.BackgroundTransparency - 0.1;
+		CoreLabel_Name.TextTransparency = CoreLabel_Name.TextTransparency - 0.1;
+		CoreLabel_CurrentGame.TextTransparency = CoreLabel_CurrentGame.TextTransparency - 0.1;
+		CoreButton_SideMenu.ImageTransparency = CoreButton_SideMenu.ImageTransparency - 0.1;
+		CoreButton_Close.BackgroundTransparency = CoreButton_Close.BackgroundTransparency - 0.1;
+		
+		wait();
+
+		CoreFrame.BackgroundTransparency = CoreFrame.BackgroundTransparency - 0.1;
+		CoreLabel_Name.TextTransparency = CoreLabel_Name.TextTransparency - 0.1;
+		CoreLabel_CurrentGame.TextTransparency = CoreLabel_CurrentGame.TextTransparency - 0.1;
+		CoreButton_SideMenu.ImageTransparency = CoreButton_SideMenu.ImageTransparency - 0.1;
+		CoreButton_Close.BackgroundTransparency = CoreButton_Close.BackgroundTransparency - 0.1;
+		
+		wait();
+
+		CoreFrame.BackgroundTransparency = CoreFrame.BackgroundTransparency - 0.1;
+		CoreLabel_Name.TextTransparency = CoreLabel_Name.TextTransparency - 0.1;
+		CoreLabel_CurrentGame.TextTransparency = CoreLabel_CurrentGame.TextTransparency - 0.1;
+		CoreButton_SideMenu.ImageTransparency = CoreButton_SideMenu.ImageTransparency - 0.1;
+		CoreButton_Close.BackgroundTransparency = CoreButton_Close.BackgroundTransparency - 0.1;
+		
+		wait();
+
+		CoreFrame.BackgroundTransparency = CoreFrame.BackgroundTransparency - 0.1;
+		CoreLabel_Name.TextTransparency = CoreLabel_Name.TextTransparency - 0.1;
+		CoreLabel_CurrentGame.TextTransparency = CoreLabel_CurrentGame.TextTransparency - 0.1;
+		CoreButton_SideMenu.ImageTransparency = CoreButton_SideMenu.ImageTransparency - 0.1;
+		CoreButton_Close.BackgroundTransparency = CoreButton_Close.BackgroundTransparency - 0.1;
+		
+		wait();
+
+		CoreFrame.BackgroundTransparency = CoreFrame.BackgroundTransparency - 0.1;
+		CoreLabel_Name.TextTransparency = CoreLabel_Name.TextTransparency - 0.1;
+		CoreLabel_CurrentGame.TextTransparency = CoreLabel_CurrentGame.TextTransparency - 0.1;
+		CoreButton_SideMenu.ImageTransparency = CoreButton_SideMenu.ImageTransparency - 0.1;
+		CoreButton_Close.BackgroundTransparency = CoreButton_Close.BackgroundTransparency - 0.1;
+		
+		wait();
+
+		CoreFrame.BackgroundTransparency = CoreFrame.BackgroundTransparency - 0.1;
+		CoreLabel_Name.TextTransparency = CoreLabel_Name.TextTransparency - 0.1;
+		CoreLabel_CurrentGame.TextTransparency = CoreLabel_CurrentGame.TextTransparency - 0.1;
+		CoreButton_SideMenu.ImageTransparency = CoreButton_SideMenu.ImageTransparency - 0.1;
+		CoreButton_Close.BackgroundTransparency = CoreButton_Close.BackgroundTransparency - 0.1;
+		
+		isOpen = true;
+		ScrollPart_Home.Visible = true;
+	end
+	
+	function Close()
+		CoreFrame.BackgroundTransparency = CoreFrame.BackgroundTransparency + 0.1;
+		CoreLabel_Name.TextTransparency = CoreLabel_Name.TextTransparency + 0.1;
+		CoreLabel_CurrentGame.TextTransparency = CoreLabel_CurrentGame.TextTransparency + 0.1;
+		CoreButton_SideMenu.ImageTransparency = CoreButton_SideMenu.ImageTransparency + 0.1;
+		CoreButton_Close.BackgroundTransparency = CoreButton_Close.BackgroundTransparency + 0.1;
+		
+		wait();
+		
+		CoreFrame.BackgroundTransparency = CoreFrame.BackgroundTransparency + 0.1;
+		CoreLabel_Name.TextTransparency = CoreLabel_Name.TextTransparency + 0.1;
+		CoreLabel_CurrentGame.TextTransparency = CoreLabel_CurrentGame.TextTransparency + 0.1;
+		CoreButton_SideMenu.ImageTransparency = CoreButton_SideMenu.ImageTransparency + 0.1;
+		CoreButton_Close.BackgroundTransparency = CoreButton_Close.BackgroundTransparency + 0.1;
+		
+		wait();
+
+		CoreFrame.BackgroundTransparency = CoreFrame.BackgroundTransparency + 0.1;
+		CoreLabel_Name.TextTransparency = CoreLabel_Name.TextTransparency + 0.1;
+		CoreLabel_CurrentGame.TextTransparency = CoreLabel_CurrentGame.TextTransparency + 0.1;
+		CoreButton_SideMenu.ImageTransparency = CoreButton_SideMenu.ImageTransparency + 0.1;
+		CoreButton_Close.BackgroundTransparency = CoreButton_Close.BackgroundTransparency + 0.1;
+		
+		wait();
+
+		CoreFrame.BackgroundTransparency = CoreFrame.BackgroundTransparency + 0.1;
+		CoreLabel_Name.TextTransparency = CoreLabel_Name.TextTransparency + 0.1;
+		CoreLabel_CurrentGame.TextTransparency = CoreLabel_CurrentGame.TextTransparency + 0.1;
+		CoreButton_SideMenu.ImageTransparency = CoreButton_SideMenu.ImageTransparency + 0.1;
+		CoreButton_Close.BackgroundTransparency = CoreButton_Close.BackgroundTransparency + 0.1;
+		
+		wait();
+
+		CoreFrame.BackgroundTransparency = CoreFrame.BackgroundTransparency + 0.1;
+		CoreLabel_Name.TextTransparency = CoreLabel_Name.TextTransparency + 0.1;
+		CoreLabel_CurrentGame.TextTransparency = CoreLabel_CurrentGame.TextTransparency + 0.1;
+		CoreButton_SideMenu.ImageTransparency = CoreButton_SideMenu.ImageTransparency + 0.1;
+		CoreButton_Close.BackgroundTransparency = CoreButton_Close.BackgroundTransparency + 0.1;
+		
+		wait();
+
+		CoreFrame.BackgroundTransparency = CoreFrame.BackgroundTransparency + 0.1;
+		CoreLabel_Name.TextTransparency = CoreLabel_Name.TextTransparency + 0.1;
+		CoreLabel_CurrentGame.TextTransparency = CoreLabel_CurrentGame.TextTransparency + 0.1;
+		CoreButton_SideMenu.ImageTransparency = CoreButton_SideMenu.ImageTransparency + 0.1;
+		CoreButton_Close.BackgroundTransparency = CoreButton_Close.BackgroundTransparency + 0.1;
+		
+		wait();
+
+		CoreFrame.BackgroundTransparency = CoreFrame.BackgroundTransparency + 0.1;
+		CoreLabel_Name.TextTransparency = CoreLabel_Name.TextTransparency + 0.1;
+		CoreLabel_CurrentGame.TextTransparency = CoreLabel_CurrentGame.TextTransparency + 0.1;
+		CoreButton_SideMenu.ImageTransparency = CoreButton_SideMenu.ImageTransparency + 0.1;
+		CoreButton_Close.BackgroundTransparency = CoreButton_Close.BackgroundTransparency + 0.1;
+		
+		wait();
+
+		CoreFrame.BackgroundTransparency = CoreFrame.BackgroundTransparency + 0.1;
+		CoreLabel_Name.TextTransparency = CoreLabel_Name.TextTransparency + 0.1;
+		CoreLabel_CurrentGame.TextTransparency = CoreLabel_CurrentGame.TextTransparency + 0.1;
+		CoreButton_SideMenu.ImageTransparency = CoreButton_SideMenu.ImageTransparency + 0.1;
+		CoreButton_Close.BackgroundTransparency = CoreButton_Close.BackgroundTransparency + 0.1;
+		
+		wait();
+
+		CoreFrame.BackgroundTransparency = CoreFrame.BackgroundTransparency + 0.1;
+		CoreLabel_Name.TextTransparency = CoreLabel_Name.TextTransparency + 0.1;
+		CoreLabel_CurrentGame.TextTransparency = CoreLabel_CurrentGame.TextTransparency + 0.1;
+		CoreButton_SideMenu.ImageTransparency = CoreButton_SideMenu.ImageTransparency + 0.1;
+		CoreButton_Close.BackgroundTransparency = CoreButton_Close.BackgroundTransparency + 0.1;
+		
+		wait();
+
+		CoreFrame.BackgroundTransparency = CoreFrame.BackgroundTransparency + 0.1;
+		CoreLabel_Name.TextTransparency = CoreLabel_Name.TextTransparency + 0.1;
+		CoreLabel_CurrentGame.TextTransparency = CoreLabel_CurrentGame.TextTransparency + 0.1;
+		CoreButton_SideMenu.ImageTransparency = CoreButton_SideMenu.ImageTransparency + 0.1;
+		CoreButton_Close.BackgroundTransparency = CoreButton_Close.BackgroundTransparency + 0.1;
+		
+		isOpen = false;
+		ScrollPart_Home.Visible = false;
+	end
+	
+	UserInput.InputBegan:Connect(function(Key)
+		if (Key.KeyCode == Enum.KeyCode.F2) then
+			if (isOpen == false) then
+				Open();
+			else
+				Close();
+			end
+		end
+	end)
+	
+	CoreButton_Close.MouseButton1Click:Connect(function()
+		if (isOpen == true) then
+			Close();
+		end
+	end)
+	-- Drag Function
+
+	local dragging;
+	local dragInput;
+	local dragStart;
+	local startPos;
+
+	function Lerp(a, b, m)
+		return a + (b - a) * m;
+	end
+
+	local lastMousePos;
+	local lastGoalPos;
+	local DRAG_SPEED = (8);
+	function Update(dt)
+		if not (startPos) then return end
+		if not (dragging) and (lastGoalPos) then
+			CoreFrame.Position = UDim2.new(startPos.X.Scale, Lerp(CoreFrame.Position.X.Offset, lastGoalPos.X.Offset, dt * DRAG_SPEED), startPos.Y.Scale, Lerp(CoreFrame.Position.Y.Offset, lastGoalPos.Y.Offset, dt * DRAG_SPEED));
+			return;
+		end;
+
+		local delta = (lastMousePos - UserInput:GetMouseLocation());
+		local xGoal = (startPos.X.Offset - delta.X);
+		local yGoal = (startPos.Y.Offset - delta.Y);
+		lastGoalPos = UDim2.new(startPos.X.Scale, xGoal, startPos.Y.Scale, yGoal);
+		CoreFrame.Position = UDim2.new(startPos.X.Scale, Lerp(CoreFrame.Position.X.Offset, xGoal, dt * DRAG_SPEED), startPos.Y.Scale, Lerp(CoreFrame.Position.Y.Offset, yGoal, dt * DRAG_SPEED));
+	end;
+
+	CoreFrame.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+			dragging = true;
+			dragStart = input.Position;
+			startPos = CoreFrame.Position;
+			lastMousePos = UserInput:GetMouseLocation();
+
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false;
+				end
+			end)
+		end
+	end)
+
+	CoreFrame.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			dragInput = input;
+		end
+	end)
+	
+	RunService.Heartbeat:Connect(Update);
+	
+	-- Loaders
+	pcall(function()
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/NixyDev/Potato/main/DataBase'))();
+	end)
+	
+	wait(1);
+	Open();
+end
