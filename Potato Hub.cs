@@ -70,14 +70,7 @@ for Index, AccountAllowed in pairs(AllowedUsers) do
 					CurrentGame = "Notoriety"
 					ScreenHandler.Destroying:Connect(function()
 						wait(2.7)
-						loadstring(game:HttpGet('rawlink'))()
-					end)
-				end
-				
-				if game.GameId == 3 then
-					ScreenHandler.Destroying:Connect(function()
-						wait(2.7)
-						loadstring(game:HttpGet('rawlink'))()
+						loadstring(game:HttpGet('https://raw.githubusercontent.com/NixyDev/Potato/main/Notoriety.lua'))()
 					end)
 				end
 				
