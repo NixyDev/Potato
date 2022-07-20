@@ -75,7 +75,7 @@ function Launch()
 		
 		
 	if game.GameId == 16680835 then
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/NixyDev/Potato/main/Notoriety.lua"))()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/NixyDev/Potato-Hub/main/Libraries/Notoriety.lua"))()
 	end
 end
 
