@@ -5,15 +5,15 @@ local CurrentClient = game:GetService("Players").LocalPlayer
 local CoreGui = game:GetService("CoreGui")
 
 function Launch()
-	local ScreenHandler = Instance.new("ScreenGui")
-	ScreenHandler.Name = math.random(800, 10000).."?@?])/HGn\!=g?bVFC"..math.random(100, 5000).."?NJ&K$$@!Gnj~6?"..math.random(1, 500)
-	ScreenHandler.Parent = CoreGui
-	ScreenHandler.DisplayOrder = 99999999
+   local ScreenHandler = Instance.new("ScreenGui")
+    ScreenHandler.Name = math.random(800, 10000).."?@?])/HGn\!=g?bVFC"..math.random(100, 5000).."?NJ&K$$@!Gnj~6?"..math.random(1, 500)
+    ScreenHandler.Parent = CoreGui
+    ScreenHandler.DisplayOrder = 99999999
     ScreenHandler.ResetOnSpawn = false
     ScreenHandler.IgnoreGuiInset = true
 
 
-	local FrameBase = Instance.new("Frame")
+    local FrameBase = Instance.new("Frame")
     FrameBase.Name = "FrameBase"
     FrameBase.Parent = ScreenHandler
     FrameBase.Position = UDim2.new(0.395, 0,0.361, 0)
@@ -23,7 +23,7 @@ function Launch()
     Instance.new("UICorner", FrameBase).CornerRadius = UDim.new(0, 5)
 
 
-	local ProgressBar = Instance.new("Frame")
+    local ProgressBar = Instance.new("Frame")
     ProgressBar.Name = "ProgressBar"
     ProgressBar.Parent = FrameBase
     ProgressBar.Position = UDim2.new(0.265, 0,0.503, 0)
@@ -31,12 +31,12 @@ function Launch()
     ProgressBar.BorderColor3 = Color3.fromRGB(216, 216, 216)
 
 
-	local StatusText = Instance.new("TextLabel")
+    local StatusText = Instance.new("TextLabel")
     StatusText.Name = "StatusText"
     StatusText.Parent = FrameBase
     StatusText.Position = UDim2.new(0.362, 0,0.35, 0)
     StatusText.Size = UDim2.new(0, 79,0, 17)
-	StatusText.BackgroundTransparency = 1
+    StatusText.BackgroundTransparency = 1
     StatusText.Font = "Gotham"
     StatusText.TextSize = 13
     StatusText.TextColor3 = Color3.fromRGB(216, 216, 216)
